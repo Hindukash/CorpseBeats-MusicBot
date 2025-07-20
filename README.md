@@ -42,6 +42,49 @@ docker-compose up -d
 3. Add OAuth2 redirect: `http://localhost:4200/api/callback`
 4. Invite with proper permissions
 
+<details>
+<summary><strong>🔐 Required Bot Permissions (Click to expand)</strong></summary>
+
+### Scopes
+- ✅ `bot`
+- ✅ `applications.commands`
+
+### Bot Permissions
+**General Permissions:**
+- ✅ Read Messages/View Channels
+- ✅ Send Messages
+- ✅ Send Messages in Threads
+- ✅ Embed Links
+- ✅ Attach Files
+- ✅ Read Message History
+- ✅ Use External Emojis
+- ✅ Add Reactions
+
+**Voice Permissions (Essential for Music):**
+- ✅ Connect (join voice channels)
+- ✅ Speak (play audio)
+- ✅ Use Voice Activity
+
+**Advanced Permissions:**
+- ✅ Manage Messages (for queue management)
+- ✅ Use Slash Commands
+
+### Bot Settings
+In Discord Developer Portal → Bot section:
+- ✅ **Public Bot** (so others can invite it)
+- ✅ **Requires OAuth2 Code Grant** (for web dashboard)
+- ✅ **Presence Intent**
+- ✅ **Server Members Intent**
+- ✅ **Message Content Intent** (if using text commands)
+
+### Invite URL Template
+```
+https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=277083450689&scope=bot%20applications.commands
+```
+Replace `YOUR_CLIENT_ID` with your bot's actual client ID.
+
+</details>
+
 ## Commands
 
 | Category | Commands |
