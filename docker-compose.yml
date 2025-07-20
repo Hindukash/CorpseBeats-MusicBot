@@ -12,9 +12,21 @@ services:
       - lavalink
     volumes:
       - ./config.js:/usr/src/app/config.js:ro
+    environment:
+      - TOKEN=${TOKEN}
+      - CLIENT_ID=${CLIENT_ID}
+      - CLIENT_SECRET=${CLIENT_SECRET}
+      - ADMIN_ID=${ADMIN_ID}
+      - LAVALINK_HOST=lavalink
+      - LAVALINK_PORT=2333
+      - LAVALINK_PASSWORD=youshallnotpass
+      - DASHBOARD_PORT=4200
+      - NODE_ENV=production
+    ports:
+      - "4200:4200"
 
   lavalink:
-    image: fredboat/lavalink:3.7.12
+    image: ghcr.io/lavalink-devs/lavalink:3.7.12
     container_name: music-lavalink
     hostname: lavalink
     restart: unless-stopped

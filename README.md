@@ -1,83 +1,132 @@
-<h1 align="center"><img src="./assets/logo.gif" width="30px"> Discord Music Bot <img src="./assets/logo.gif" width="30px"></h1>
+# CorpseBeats - Enterprise Discord Music Bot
 
-## ✨Latest Updates
+A powerful, enterprise-ready Discord music bot built with Discord.js and Lavalink, featuring a web dashboard and comprehensive music controls.
 
-v5.1 Is in development! Go check it out [HERE!](https://github.com/wtfnotavailable/Discord-MusicBot)
+## 🎵 Features
 
-What do you gain from it? Let us explain:
- - Completely modular docker environment for easier development and deployment
- - A WORKING DASHBOARD!!!
- - DB Integration for you to save your favorite songs in
- - Integrated self hosted Lavalink
- - Dedicated query channel
- - More commands and functionalities
- - And so much more to come!
+- **High-Quality Music Playback** - Powered by Lavalink audio processing
+- **32+ Slash Commands** - Modern Discord interaction support
+- **Web Dashboard** - Browser-based management interface
+- **Multi-Platform Support** - YouTube, Spotify, SoundCloud, and more
+- **Advanced Controls** - Queue management, filters, lyrics, and search
+- **Enterprise Ready** - Docker deployment with environment configuration
+- **24/7 Mode** - Continuous operation support
+- **Permission System** - Role-based access controls
 
-## 🚧 | Prerequisites
+## 🚀 Quick Start
 
-- [Node.js 16+](https://nodejs.org/en/download/)
-- [Lavalink Server](https://code.darrennathanael.com/how-to-lavalink)
-- You'll need to run `npm run deploy` or `yarn deploy`. to initialized the slash commands. _You can do this on your pc
-  locally_
+### Prerequisites
+- Node.js 18+
+- Docker & Docker Compose
+- Discord Bot Application with proper permissions
 
-> NOTE: Lavalink is needed for music functionality. You need to have a working Lavalink server to make the bot work.
+### Installation
 
-## 📝 | Important Note if you're Switching from v4 to v5
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd CorpseBeats-MusicBot
+   ```
 
-1. Download and configure v5 in a seperate folder.
-2. Kick your bot out of your server.
-3. Reinvite the Bot with the right
-   scopes. [Example Invite URL (Change CLIENT_ID)](https://discord.com/oauth2/authorize?client_id=CLIENT_ID&permissions=277083450689&scope=bot%20applications.commands)
-4. Run `npm run deploy` or `yarn deploy` to initialize the slash commands. _You can do this on your pc locally_
+2. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your Discord bot credentials
+   ```
 
-## 📝 | Tutorial
+3. **Start with Docker**
+   ```bash
+   docker-compose up -d
+   ```
 
-### 🐳 Docker
-You should configure the `config.js` file with the host `"lavalink"`, using the same `password` and `port` as specified in `docker/application.yml`.
+4. **Access the web dashboard**
+   Open http://localhost:4200 in your browser
 
-Build and start bot and lavalink
-```sh
-docker-compose up -d --build
+## ⚙️ Configuration
+
+### Required Environment Variables
+
+```env
+TOKEN=your_discord_bot_token
+CLIENT_ID=your_bot_application_id
+CLIENT_SECRET=your_bot_client_secret
+ADMIN_ID=your_discord_user_id
 ```
-### 💪🏻 Non-Docker
-> The `config.js` file should be configured first. Don't forget to add a lavalink host
 
-Install all dependencies and deploy Slash Commands
-```sh
+### Discord Bot Setup
+1. Create application at https://discord.com/developers/applications
+2. Enable bot user and copy token
+3. Set up OAuth2 redirects: `http://localhost:4200/api/callback`
+4. Invite bot with proper permissions
+
+## 🎮 Commands
+
+### Music Controls
+- `/play <song>` - Play music from various sources
+- `/pause` / `/resume` - Control playback
+- `/skip` - Skip current track
+- `/queue` - View current queue
+- `/volume <1-100>` - Adjust volume
+
+### Advanced Features
+- `/loop` - Loop current track or queue
+- `/shuffle` - Shuffle queue
+- `/filters` - Apply audio filters
+- `/lyrics` - Get song lyrics
+- `/search` - Search for tracks
+
+### Administration
+- `/247` - Enable 24/7 mode
+- `/autoleave` - Auto-disconnect when empty
+- `/clean` - Clear queue
+
+## 🛠️ Development
+
+### Local Development
+```bash
 npm install
-npm run deploy
-```
-Start the bot
-```sh
-node index.js
+npm start
 ```
 
-## 📝 | [Support Server](https://discord.gg/sbySMS7m3v)
+### Dashboard Development
+```bash
+cd dashboard
+npm install
+npm run dev
+```
 
-If you have major coding issues with this bot, please join and ask for help.
+## 🐳 Docker Deployment
 
-## 📸 | Screenshots
+The bot includes production-ready Docker configuration:
 
-Soon
+```yaml
+# Uses Node.js 18 Alpine
+# Includes Lavalink audio server
+# Automatic dependency installation
+# Environment-based configuration
+```
 
-## 🚀 | Deploy
+## 🔧 Customization
 
-[![Deploy to heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/SudhanPlayz/Discord-MusicBot/tree/v5)
-[![Open in Gitpod](https://camo.githubusercontent.com/76e60919474807718793857d8eb615e7a50b18b04050577e5a35c19421f260a3/68747470733a2f2f676974706f642e696f2f627574746f6e2f6f70656e2d696e2d676974706f642e737667)](https://gitpod.io/#https://github.com/SudhanPlayz/Discord-MusicBot/tree/v5)
+- **Branding**: Update bot name, avatar, and embed colors in `config.js`
+- **Features**: Add custom commands in the `commands/` directory
+- **Dashboard**: Customize the web interface in the `dashboard/` folder
 
-## ✨ | Contributors
+## 📝 License
 
-Contributions are always welcomed :D Make sure to follow [Contributing.md](/CONTRIBUTING.md)
+This project is based on the SudhanPlayz Discord-MusicBot template and is licensed under Apache-2.0.
 
-<a href="https://github.com/SudhanPlayz/Discord-MusicBot/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=SudhanPlayz/Discord-MusicBot" />
-</a>
+## 🤝 Contributing
 
-## 🌟 | Made with
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
-- [Discord.js](https://discord.js.org/)
-- [Lavalink](https://github.com/freyacodes/Lavalink) with erela.js
-- [Express](https://expressjs.com/)
-- [Next JS](https://nextjs.org/)
-- [Next UI](https://nextui.org)
-- [Material UI Icons](https://mui.com/material-ui/material-icons/)
+## 📞 Support
+
+For support and questions, please open an issue in this repository.
+
+---
+
+**⚠️ Note**: This bot requires a working Lavalink server for music functionality. The included configuration uses a reliable public server for development and testing.
