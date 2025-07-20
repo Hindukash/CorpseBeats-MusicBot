@@ -76,6 +76,12 @@ cd dashboard && npm run dev
 
 Apache-2.0 License - Based on [SudhanPlayz/Discord-MusicBot](https://github.com/SudhanPlayz/Discord-MusicBot)
 
+## About This Project
+
+This Discord Music Bot was built using an existing template and enhanced through AI-assisted development. All modifications from the original template—including updates for 2025 compatibility—were implemented using AI coding tools and prompt engineering.
+
+The project demonstrates how AI can effectively adapt and modernize existing codebases through guided workflows and intelligent code generation.
+
 ## Contributing
 
 Contributions welcome! Please read our contributing guidelines and submit pull requests.
